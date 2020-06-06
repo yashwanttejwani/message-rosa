@@ -1,6 +1,5 @@
 package messagerosa;
 
-import messagerosa.utils.MessageBodyParser;
 import messagerosa.utils.XMessageStylesParser;
 import org.junit.jupiter.api.Test;
 
@@ -13,8 +12,8 @@ class MessageBodyParserTest {
 
     @Test
     public void testForItalicStrikethrough(){
-        String test1 = "We'll see you at ~_*4PM*_~";
-        List<MessageBodyParser.Style> parsed = MessageBodyParser.parse(test1);
+        String strikeThroughString = "We'll see you at ~_*4PM*_~";
+        List<XMessageStylesParser.Style> parsed = XMessageStylesParser.parse(strikeThroughString);
         assertEquals(parsed.get(0).getStart(), 17);
         assertEquals(parsed.get(0).getEnd(), 25);
         assertEquals(parsed.get(1).getStart(), 18);
