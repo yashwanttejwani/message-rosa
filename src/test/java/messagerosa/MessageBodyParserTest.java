@@ -7,13 +7,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class ParserTest {
+class MessageBodyParserTest {
 
 
     @Test
     public void testForItalicStrikethrough(){
         String test1 = "We'll see you at ~_*4PM*_~";
-        List<Parser.Style> parsed = Parser.parse(test1);
+        List<MessageBodyParser.Style> parsed = MessageBodyParser.parse(test1);
         assertEquals(parsed.get(0).getStart(), 17);
         assertEquals(parsed.get(0).getEnd(), 25);
         assertEquals(parsed.get(1).getStart(), 18);
@@ -25,7 +25,7 @@ class ParserTest {
     @Test
     public void testForMultipleSpansSeparated(){
         String monospacedString = " We *expect* to see you at ~4PM~ 6PM.";
-        List<Parser.Style> parsed = Parser.parse(monospacedString);
+        List<MessageBodyParser.Style> parsed = MessageBodyParser.parse(monospacedString);
         assertEquals(parsed.get(0).getKeyword(), "*");
         assertEquals(parsed.get(0).getStart(), 4);
         assertEquals(parsed.get(0).getEnd(), 11);
@@ -37,7 +37,7 @@ class ParserTest {
     @Test
     public void testForMonospacedChars(){
         String monospacedString = " Use the ```Message``` API to notify users.";
-        List<Parser.Style> parsed = Parser.parse(monospacedString);
+        List<MessageBodyParser.Style> parsed = MessageBodyParser.parse(monospacedString);
         assertEquals(parsed.get(0).getKeyword(), "```");
         assertEquals(parsed.get(0).getStart(), 9);
         assertEquals(parsed.get(0).getEnd(), 21);

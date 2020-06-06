@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:orx="http://www.springframework.org/schema/beans">
+    <h:head>
+        <instance>
+            <data id="mysurvey" orx:version="2014083101">
+                <messageId></messageId>
+                <to>
+                    <userIdentifier>blablab</userIdentifier>
+                    <campaignId></campaignId>
+                    <formId></formId>
+                    <bot></bot>
+                    <broadcast></broadcast>
+                </to>
+                <from>
+                    <userIdentifier></userIdentifier>
+                    <campaignId></campaignId>
+                    <formId></formId>
+                    <bot></bot>
+                    <broadcast></broadcast>
+                </from>
+                <channelURI></channelURI>
+                <providerURI></providerURI>
+                <timestamp></timestamp>
+                <userstate></userstate>
+                <encryptionProtocol></encryptionProtocol>
+                <transformers>
+                    <transformerId></transformerId>
+                </transformers>
+                <thread>
+                    <offset></offset>
+                    <startDate></startDate>
+                    <lastMessageId></lastMessageId>
+                </thread>
+                <meta>
+                    <instanceID></instanceID>>
+                </meta>
+            </data>
+        </instance>
+        <bind nodeset="/data/messageId" type="xsd:string" required="true()" />
+        <bind nodeset="/data/to/userIdentifier" type="xsd:string" required="true()" />
+        <bind nodeset="/data/to/camaignId" type="xsd:string" required="true()" />
+        <bind nodeset="/data/to/formId" type="xsd:string" required="true()" />
+        <bind nodeset="/data/to/bot" type="xsd:boolean" required="false()" />
+        <bind nodeset="/data/to/broadcast" type="xsd:boolean" required="false()" />
+        <bind nodeset="/data/from/userIdentifier" type="xsd:string" required="true()" />
+        <bind nodeset="/data/from/camaignId" type="xsd:string" required="true()" />
+        <bind nodeset="/data/from/formId" type="xsd:string" required="true()" />
+        <bind nodeset="/data/from/bot" type="xsd:boolean" required="false()" />
+        <bind nodeset="/data/from/broadcast" type="xsd:boolean" required="false()" />
+        <bind nodeset="/data/channel" type="xsd:binary" required="true()" />
+        <bind nodeset="/data/provider" type="xsd:binary" required="true()" />
+        <bind nodeset="/data/timestamp" type="xsd:string" required="true()" />
+        <bind nodeset="/data/userstate" type="xsd:string" required="true()" />
+        <bind nodeset="/data/encryptionProtocol" type="xsd:string" required="true()" />
+        <bind nodeset="/data/transformers/transformerId" type="xsd:string" required="true()" />
+        <bind nodeset="/data/thread/offset" type="xsd:int" required="true()" />
+        <bind nodeset="/data/thread/startDate" type="xsd:string" required="true()" />
+        <bind nodeset="/data/thread/lastMessageId" type="xsd:string" required="true()" />
+        <bind nodeset="/data/orx:meta/orx:instanceID" preload="uid" type="xsd:string"/>
+    </h:head>
+    <h:body>
+    </h:body>
+</h:html>

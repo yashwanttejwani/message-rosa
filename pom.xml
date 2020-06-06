@@ -13,7 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>message-rosa</name>
 	<description>message-rosa for messages</description>
-
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -41,7 +40,12 @@
 			<version>1.18.2</version>
 			<scope>provided</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>net.sf.kxml</groupId>
+            <artifactId>kxml2</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
