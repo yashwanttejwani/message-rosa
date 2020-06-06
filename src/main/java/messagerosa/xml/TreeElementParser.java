@@ -60,4 +60,5 @@ public class TreeElementParser extends ElementParser<XMessage> {
 
         return element;
     }
+}
 
