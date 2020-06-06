@@ -1,10 +1,11 @@
-package messagerosa;
+package messagerosa.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MessageBodyParser {
+
+public class XMessageStylesParser {
 
     private final static List<Character> KEYWORDS = Arrays.asList('*', '_', '~', '`');
     private final static List<Character> NO_SUB_PARSING_KEYWORDS = Arrays.asList('`');

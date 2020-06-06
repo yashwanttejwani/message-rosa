@@ -1,6 +1,5 @@
 package messagerosa.xml;
 
-import messagerosa.XMessage;
 import messagerosa.xml.exception.InvalidStructureException;
 import org.kxml2.io.KXmlParser;
 import org.xmlpull.v1.XmlPullParserException;

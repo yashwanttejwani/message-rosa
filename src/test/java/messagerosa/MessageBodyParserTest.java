@@ -1,11 +1,12 @@
 package messagerosa;
 
+import messagerosa.utils.MessageBodyParser;
+import messagerosa.utils.XMessageStylesParser;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 
 class MessageBodyParserTest {
 
@@ -25,7 +26,7 @@ class MessageBodyParserTest {
     @Test
     public void testForMultipleSpansSeparated(){
         String monospacedString = " We *expect* to see you at ~4PM~ 6PM.";
-        List<MessageBodyParser.Style> parsed = MessageBodyParser.parse(monospacedString);
+        List<XMessageStylesParser.Style> parsed = XMessageStylesParser.parse(monospacedString);
         assertEquals(parsed.get(0).getKeyword(), "*");
         assertEquals(parsed.get(0).getStart(), 4);
         assertEquals(parsed.get(0).getEnd(), 11);
@@ -37,7 +38,7 @@ class MessageBodyParserTest {
     @Test
     public void testForMonospacedChars(){
         String monospacedString = " Use the ```Message``` API to notify users.";
-        List<MessageBodyParser.Style> parsed = MessageBodyParser.parse(monospacedString);
+        List<XMessageStylesParser.Style> parsed = XMessageStylesParser.parse(monospacedString);
         assertEquals(parsed.get(0).getKeyword(), "```");
         assertEquals(parsed.get(0).getStart(), 9);
         assertEquals(parsed.get(0).getEnd(), 21);
