@@ -1,5 +1,6 @@
 package messagerosa.xml;
 
+import messagerosa.core.models.XMessage;
 import messagerosa.xml.exception.InvalidStructureException;
 import org.kxml2.io.KXmlParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -49,7 +50,7 @@ public class TreeElementParser extends ElementParser<XMessage> {
                 case KXmlParser.END_TAG:
                     return element;
                 case KXmlParser.TEXT:
-                    element.setValue(new UncastData(parser.getText().trim()));
+                    element.setValue(parser.getText().trim());
                     break;
                 default:
                     throw new InvalidStructureException(

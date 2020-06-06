@@ -48,4 +48,6 @@ public class XMessage implements Serializable {
         return this.xml;
     }
 
+    public void setValue(String value) {
+    }
 }

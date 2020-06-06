@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MessageBodyParserTest {
 
-
     @Test
     public void testForItalicStrikethrough(){
         String strikeThroughString = "We'll see you at ~_*4PM*_~";
