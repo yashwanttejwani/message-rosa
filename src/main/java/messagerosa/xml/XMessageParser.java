@@ -13,14 +13,14 @@ import java.util.Map;
  * @author chakshu
  * @author umang
  */
-public class TreeElementParser extends ElementParser<XMessage> {
+public class XMessageParser extends ElementParser<XMessage> {
     private final int multiplicity;
     private final String instanceId;
 
     private static final String INSTANCE_ELEMENT = "instance";
     private static final String ID_ATTR = "id";
 
-    public TreeElementParser(KXmlParser parser, int multiplicity, String instanceId) {
+    public XMessageParser(KXmlParser parser, int multiplicity, String instanceId) {
         super(parser);
         this.multiplicity = multiplicity;
         this.instanceId = instanceId;
@@ -44,7 +44,7 @@ public class TreeElementParser extends ElementParser<XMessage> {
                     final Integer multiplicity = multiplicitiesByName.get(name);
                     int newMultiplicity = (multiplicity != null) ? multiplicity + 1 : 0;
                     multiplicitiesByName.put(name, newMultiplicity);
-                    XMessage childTreeElement = new TreeElementParser(parser, newMultiplicity, instanceId).parse();
+                    XMessage childTreeElement = new XMessageParser(parser, newMultiplicity, instanceId).parse();
                     //TODO: Add the above element to parent XMessage
                     break;
                 case KXmlParser.END_TAG:
@@ -53,8 +53,7 @@ public class TreeElementParser extends ElementParser<XMessage> {
                     element.setValue(parser.getText().trim());
                     break;
                 default:
-                    throw new InvalidStructureException(
-                            "Exception while trying to parse an XML Tree, got something other than tags and text", parser);
+                    throw new InvalidStructureException("Exception while trying to parse an XML Tree, got something other than tags and text", parser);
             }
         }
 

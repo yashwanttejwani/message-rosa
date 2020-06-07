@@ -34,6 +34,8 @@ public class XMessage implements Serializable {
 
     private MessageThread thread;
 
+    private MessagePayload payload;
+
     private String xml;
 
     public XMessage(String name, int multiplicity) {

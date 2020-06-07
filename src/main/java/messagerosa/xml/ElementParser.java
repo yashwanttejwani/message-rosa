@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Logger;
 
 /**
  * <p>Element Parser is the core parsing element for XML files. Implementations
@@ -65,7 +66,6 @@ public abstract class ElementParser<T> {
             return parser;
         } catch (XmlPullParserException e) {
             // TODO Auto-generated catch block
-            log.error("Element Parser", e);
             throw new IOException(e.getMessage());
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
