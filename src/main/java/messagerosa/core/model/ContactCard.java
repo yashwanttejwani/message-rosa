@@ -1,4 +1,4 @@
-package messagerosa.core.models;
+package messagerosa.core.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Transformers {
-    private String transformerId;
+public class ContactCard{
+
+    private ContactCardAddress address;
+    private String name;
 }

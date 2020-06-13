@@ -1,4 +1,4 @@
-package messagerosa.core.models;
+package messagerosa.core.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LocationParams {
-    private double longitude;
-    private double latitude;
+public class ContactCardAddress {
+
+    private String city;
+    private String country;
+    private int countryCode;
 }

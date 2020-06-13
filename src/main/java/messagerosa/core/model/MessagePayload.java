@@ -1,4 +1,4 @@
-package messagerosa.core.models;
+package messagerosa.core.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
