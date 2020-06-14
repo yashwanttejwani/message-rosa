@@ -1,5 +1,7 @@
 package messagerosa.core.model;
 
+import com.sun.istack.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +11,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MessageThread {
-    private int offset;
+public class XMessageThread {
+    private int offset; // normal form or simple chat..
+    @NotNull
     private String startDate;
-    private String lastMessageId;
+    @NotNull
+    private String lastMessageId; // last incoming msgId
 }

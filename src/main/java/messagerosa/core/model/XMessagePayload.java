@@ -11,10 +11,10 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SenderReceiverInfo {
-	private String userIdentifier;
-	private String campaignId;
-	private String formId;
-	private boolean bot;
-	private boolean broadcast;
+public class XMessagePayload {
+	private String text;
+	private MessageMedia media;
+	private LocationParams location;
+	private ContactCard contactCard;
+
 }
