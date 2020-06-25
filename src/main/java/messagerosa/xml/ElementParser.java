@@ -1,6 +1,6 @@
 package messagerosa.xml;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import messagerosa.xml.exception.InvalidStructureException;
 import messagerosa.xml.exception.UnfullfilledRequirementsException;
 import org.kxml2.io.KXmlParser;
@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  *
  * @author ctsims
  */
-@Log4j2
+
 public abstract class ElementParser<T> {
 
     protected final KXmlParser parser;

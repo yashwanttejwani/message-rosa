@@ -2,7 +2,10 @@ package messagerosa.core.model;
 
 import java.io.Serializable;
 import java.io.StringWriter;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -24,6 +27,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @XmlRootElement
 public class XMessage implements Serializable {
+
+	public enum MessageState {
+		FAILED_TO_DELIVER,
+		DELIVERED,
+		READ,
+		REPLIED
+	}
+
 	private String messageId;
 	@NotNull
 	private SenderReceiverInfo to;
@@ -38,6 +49,8 @@ public class XMessage implements Serializable {
 
 	private String userState;
 	private String encryptionProtocol;
+
+	private MessageState messageState;
 	
 	@NotNull
 	private ArrayList<Transformer> transformers; // -1 no transfer like ms3 transforms msg to next msg
@@ -62,4 +75,39 @@ public class XMessage implements Serializable {
 		transformers.remove(0);
 	}
 
+	public String getChannel(){
+		return channelURI;
+	}
+
+	public String getProvider(){
+		return providerURI;
+	}
+
+	public long secondsSinceLastMessage(){
+		long messageTime = Long.parseLong(this.timestamp);
+		long currentTimestamp = Instant.now().getEpochSecond();
+		return currentTimestamp - messageTime;
+	}
+
+	public void setChannel(String channel){
+		this.channelURI =channel;
+	}
+
+	public void setProvider(String provider){
+		this.providerURI = provider;
+	}
+
+	public void setNextDestination(String destination){
+		if(destination.equals("Outbound")){
+			this.transformers = new ArrayList<>();
+
+		}else{
+			this.setNextDestination(TransformerRegistry.getName(transformers.get(0).getId()));
+		}
+	}
+
+	public String getCampaign(){
+		System.out.println("Called getCampaign");
+		return "ResumeBuilder";
+	}
 }
