@@ -122,4 +122,8 @@ public class XMessage implements Serializable {
 		System.out.println("Called getCampaign");
 		return "ResumeBuilder";
 	}
+
+	public String getMessageStateString(){
+		return this.messageState.name();
+	}
 }
