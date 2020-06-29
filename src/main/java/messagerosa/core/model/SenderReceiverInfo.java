@@ -12,7 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SenderReceiverInfo {
-	private String userIdentifier;
+
+	// persist
+	private String userID;
+
 	private String campaignId;
 	private String formId;
 	private boolean bot;

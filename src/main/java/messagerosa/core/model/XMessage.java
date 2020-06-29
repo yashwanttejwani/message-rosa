@@ -35,26 +35,38 @@ public class XMessage implements Serializable {
 		REPLIED
 	}
 
-	private String messageId;
+	//Persist
+	private String app;
+
+	//Persist
+	private MessageID messageId;
+
 	@NotNull
 	private SenderReceiverInfo to;
 	@NotNull
 	private SenderReceiverInfo from;
 	@NotNull
+
+	//Persist
 	private String channelURI; // whatsapp
 	@NotNull
+
+	//Persist
 	private String providerURI; // gupshup
+
+	//Persist
 	@NotNull
 	private String timestamp;
 
 	private String userState;
 	private String encryptionProtocol;
 
+	//Persist
 	private MessageState messageState;
 	
 	@NotNull
 	private ArrayList<Transformer> transformers; // -1 no transfer like ms3 transforms msg to next msg
-	
+
 	private XMessageThread thread;
 	private XMessagePayload payload;
 
