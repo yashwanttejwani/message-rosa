@@ -28,13 +28,6 @@ import lombok.Setter;
 @XmlRootElement
 public class XMessage implements Serializable {
 
-	public enum MessageState {
-		FAILED_TO_DELIVER,
-		DELIVERED,
-		READ,
-		REPLIED
-	}
-
 	private String messageId;
 	@NotNull
 	private SenderReceiverInfo to;
