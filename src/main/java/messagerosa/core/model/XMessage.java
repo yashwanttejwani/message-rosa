@@ -7,6 +7,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.MappedSuperclass;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -26,8 +27,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement
+@MappedSuperclass
 public class XMessage implements Serializable {
-
 	public enum MessageState {
 		FAILED_TO_DELIVER,
 		DELIVERED,
@@ -56,12 +57,11 @@ public class XMessage implements Serializable {
 
 	//Persist
 	@NotNull
-	private String timestamp;
+	private Long timestamp;
 
 	private String userState;
 	private String encryptionProtocol;
 
-	//Persist
 	private MessageState messageState;
 	
 	@NotNull
@@ -96,7 +96,7 @@ public class XMessage implements Serializable {
 	}
 
 	public long secondsSinceLastMessage(){
-		long messageTime = Long.parseLong(this.timestamp);
+		long messageTime = this.timestamp;
 		long currentTimestamp = Instant.now().getEpochSecond();
 		return currentTimestamp - messageTime;
 	}
