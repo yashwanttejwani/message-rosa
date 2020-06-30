@@ -63,6 +63,8 @@ public class XMessage implements Serializable {
 	private String encryptionProtocol;
 
 	private MessageState messageState;
+
+	private String lastMessageID;
 	
 	@NotNull
 	private ArrayList<Transformer> transformers; // -1 no transfer like ms3 transforms msg to next msg

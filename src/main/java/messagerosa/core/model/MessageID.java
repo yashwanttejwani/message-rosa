@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class MessageID {
+   private String id;
    private String gupshupMessageID;
-    private String whatsappMessageID;
+   private String whatsappMessageID;
 }
