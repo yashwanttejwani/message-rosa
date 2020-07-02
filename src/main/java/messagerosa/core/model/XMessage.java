@@ -65,6 +65,8 @@ public class XMessage implements Serializable {
 	private MessageState messageState;
 
 	private String lastMessageID;
+
+	private CampaignStage campaignStage;
 	
 	@NotNull
 	private ArrayList<Transformer> transformers; // -1 no transfer like ms3 transforms msg to next msg
