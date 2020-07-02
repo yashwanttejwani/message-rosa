@@ -11,7 +11,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="adapter" target="1.5" />
       <module name="message-rosa" target="1.8" />
+      <module name="orchestrator" target="1.5" />
+      <module name="transformer" target="1.5" />
+      <module name="whatsapp-inbound" target="1.5" />
+      <module name="whatsapp-outbound" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
