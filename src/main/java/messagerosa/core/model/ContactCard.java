@@ -10,6 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ContactCard{
-    private ContactCardAddress address;
+    private Address address;
     private String name;
 }

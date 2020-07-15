@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContactCardAddress {
+public class Address {
 
     private String city;
     private String country;

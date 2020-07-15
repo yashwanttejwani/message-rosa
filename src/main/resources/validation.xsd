@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://www.samagra.io"
+           xmlns:sam="https://www.samagra.io"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="timestamp">
+        <xs:restriction base="xs:negativeInteger">
+            <xs:pattern value="^(\d{13})?$"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="messageID">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="gupshupMessageID" type="xs:string"/>
+            <xs:element name="whatsappMessageID" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="thread">
+        <xs:sequence>
+            <xs:element name="offset" type="xs:positiveInteger"/>
+            <xs:element name="startDate" type="sam:timestamp"/>
+            <xs:element name="lastMessage" type="sam:messageID"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="senderReceiverInfo">
+        <xs:sequence>
+            <xs:element name="bot" type="xs:boolean"/>
+            <xs:element name="broadcast" type="xs:boolean"/>
+            <xs:element name="userID" type="xs:string"/>
+            <xs:element name="campaignID" type="xs:string"/>
+            <xs:element name="formID" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="conversationStage">
+        <xs:sequence>
+            <xs:element name="stage" type="xs:string"/>
+            <xs:element name="state" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="payload">
+        <xs:sequence>
+            <xs:element name="stage" type="xs:string"/>
+            <xs:element name="state" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="address">
+        <xs:sequence>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="country" type="xs:string"/>
+            <xs:element name="countryCode" type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="contactCard">
+        <xs:sequence>
+            <xs:element name="address" type="sam:address"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="locationParams">
+        <xs:sequence>
+            <xs:element name="latitude" type="xs:double"/>
+            <xs:element name="longitude" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="messageMedia">
+        <xs:sequence>
+            <xs:element name="category" type="xs:string"/>
+            <xs:element name="text" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="xMessagePayload">
+        <xs:sequence>
+            <xs:element name="text" type="xs:string"/>
+            <xs:element name="media" type="sam:messageMedia"/>
+            <xs:element name="location" type="sam:locationParams"/>
+            <xs:element name="contactCard" type="sam:contactCard"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="transformer">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="meta" type="xs:anyType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="xMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="app" type="xs:string"/>
+                <xs:element name="messageID" type="xs:string"/>
+                <xs:element name="channelURI" type="xs:string"/>
+                <xs:element name="providerURI" type="xs:string"/>
+                <xs:element name="timestamp" type="sam:timestamp"/>
+                <xs:element name="userstate" type="xs:string"/>
+                <xs:element name="encryptionProtocol" type="xs:string"/>
+                <xs:element name="thread" type="sam:thread"/>
+                <xs:element name="to" type="sam:senderReceiverInfo"/>
+                <xs:element name="from" type="sam:senderReceiverInfo"/>
+                <xs:element name="payload" type="sam:xMessagePayload"/>
+                <xs:element name="conversationStage" type="sam:conversationStage"/>
+                <xs:element name="messageState" type="xs:string"/>
+                <xs:element name="lastMessageID" type="xs:string"/>
+                <xs:element name="transformers" type="sam:transformer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -4,14 +4,12 @@
     <to>
         <userIdentifier>blablab</userIdentifier>
         <campaignId>blablab</campaignId>
-        <formId>blablab</formId>
         <bot>blablab</bot>
         <broadcast>blablab</broadcast>
     </to>
     <from>
         <userIdentifier>blablab</userIdentifier>
         <campaignId>blablab</campaignId>
-        <formId>blablab</formId>
         <bot>blablab</bot>
         <broadcast>blablab</broadcast>
     </from>
