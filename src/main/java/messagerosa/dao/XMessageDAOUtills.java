@@ -10,8 +10,8 @@ public class XMessageDAOUtills {
 
     public static XMessageDAO convertXMessageToDAO(XMessage xmsg){
         XMessageDAO xmsgDao = new XMessageDAO();
-        xmsgDao.setGupshupMessageId(xmsg.getMessageId().getGupshupMessageID());
-        xmsgDao.setWhatsappMessageId(xmsg.getMessageId().getWhatsappMessageID());
+        xmsgDao.setGupshupMessageId(xmsg.getMessageID().getGupshupMessageID());
+        xmsgDao.setWhatsappMessageId(xmsg.getMessageID().getWhatsappMessageID());
         xmsgDao.setUserId(xmsg.getTo().getUserID());
         xmsgDao.setFromId(xmsg.getFrom().getUserID());
         xmsgDao.setChannel(xmsg.getChannelURI());

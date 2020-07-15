@@ -16,8 +16,8 @@ public class SenderReceiverInfo {
 	// persist
 	private String userID;
 
-	private String campaignId;
-	private String formId;
+	private String campaignID;
+	private String formID;
 	private boolean bot;
 	private boolean broadcast;
 }

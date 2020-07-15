@@ -2,10 +2,8 @@ package messagerosa.core.model;
 
 import java.io.Serializable;
 import java.io.StringWriter;
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 
 import javax.persistence.MappedSuperclass;
 import javax.xml.bind.JAXBContext;
@@ -40,7 +38,7 @@ public class XMessage implements Serializable {
 	private String app;
 
 	//Persist
-	private MessageID messageId;
+	private MessageID messageID;
 
 	@NotNull
 	private SenderReceiverInfo to;
@@ -66,7 +64,7 @@ public class XMessage implements Serializable {
 
 	private String lastMessageID;
 
-	private CampaignStage campaignStage;
+	private ConversationStage conversationStage;
 	
 	@NotNull
 	private ArrayList<Transformer> transformers; // -1 no transfer like ms3 transforms msg to next msg

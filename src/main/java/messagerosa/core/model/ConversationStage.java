@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CampaignStage {
+public class ConversationStage {
     public enum State {
         STARTING,
         ONGOING,
