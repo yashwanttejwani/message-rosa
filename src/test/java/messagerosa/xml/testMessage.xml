@@ -1,37 +1,22 @@
 <?xml version="1.0"?>
 <xMessage>
-    <messageId>Test</messageId>
-    <to>
-        <userIdentifier>blablab</userIdentifier>
-        <campaignId>blablab</campaignId>
-        <bot>blablab</bot>
-        <broadcast>blablab</broadcast>
-    </to>
-    <from>
-        <userIdentifier>blablab</userIdentifier>
-        <campaignId>blablab</campaignId>
-        <bot>blablab</bot>
-        <broadcast>blablab</broadcast>
-    </from>
-    <channelURI>blablab</channelURI>
-    <providerURI>blablab</providerURI>
-    <timestamp>blablab</timestamp>
-    <userstate>blablab</userstate>
-    <encryptionProtocol>blablab</encryptionProtocol>
-    <transformers>
-        <id>1</id>
-    </transformers>
+    <app>897fb6ea-cb07-4891-b714-1e86784ef610</app>
+    <channel>WhatsApp</channel>
+    <channelURI>WhatsApp</channelURI>
+    <conversationStage>
+        <stage>0</stage>
+        <state>STARTING</state>
+    </conversationStage>
+    <provider>Gupshup</provider>
+    <providerURI>Gupshup</providerURI>
+    <timestamp>1595137277407</timestamp>
     <transformers>
         <id>2</id>
+        <metaData>
+            <entry>
+                <key>Form</key>
+                <value>RQ</value>
+            </entry>
+        </metaData>
     </transformers>
-    <thread>
-        <offset>1</offset>
-        <startDate>2</startDate>
-        <lastMessageId>3</lastMessageId>
-    </thread>
-    <meta>
-        <instanceID>bla</instanceID>>
-    </meta>
-    <payload>
-    </payload>
 </xMessage>

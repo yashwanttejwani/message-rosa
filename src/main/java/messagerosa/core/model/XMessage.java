@@ -28,6 +28,7 @@ import lombok.Setter;
 @MappedSuperclass
 public class XMessage implements Serializable {
 	public enum MessageState {
+		NOT_SENT,
 		FAILED_TO_DELIVER,
 		DELIVERED,
 		READ,

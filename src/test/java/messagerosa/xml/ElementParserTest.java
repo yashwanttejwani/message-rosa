@@ -31,7 +31,7 @@ class ElementParserTest {
 
     @Test
     public void parseInternalInstances() throws IOException, JAXBException {
-        InputStream inputStream = new FileInputStream("/Users/apple/chaks/experiments/java/message-rosa/src/test/java/messagerosa/xml/" +"testMessage.xml");
+        InputStream inputStream = new FileInputStream("/Users/apple/chaks/experiments/java/comms/message-rosa/src/test/java/messagerosa/xml/" +"testMessage.xml");
         XMessage message = XMessageParser.parse(inputStream);
         Assertions.assertEquals(1, 1);
     }
