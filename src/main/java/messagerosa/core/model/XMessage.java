@@ -39,7 +39,7 @@ public class XMessage implements Serializable {
 	private String app;
 
 	//Persist
-	private MessageID messageID;
+	private MessageId messageId;
 
 	@NotNull
 	private SenderReceiverInfo to;
