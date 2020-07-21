@@ -17,7 +17,7 @@ public class XMessageDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, name = "gupshup_message_id")
+    @Column(nullable = true, name = "gupshup_message_id")
     private String gupshupMessageId;
 
     @Column(name = "whatsapp_message_id")

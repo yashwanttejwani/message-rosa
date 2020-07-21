@@ -8,5 +8,7 @@ import java.util.List;
 @Repository
 public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
     List<XMessageDAO> findAllByUserId(String userID);
+
+    List<XMessageDAO> findAllByUserIdOrderByTimeStampDsc(String userID);
 }
 

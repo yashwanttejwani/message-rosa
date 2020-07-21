@@ -16,3 +16,5 @@ public class XMessageThread {
     @NotNull
     private String lastMessageId; // last incoming msgId
 }
+
+// sms -> whatsapp reply ->
