@@ -32,7 +32,11 @@ public class XMessage implements Serializable {
 		FAILED_TO_DELIVER,
 		DELIVERED,
 		READ,
-		REPLIED
+		REPLIED,
+		ENQUEUED,
+		SENT,
+		OPTED_IN,
+		OPTED_OUT
 	}
 
 	//Persist

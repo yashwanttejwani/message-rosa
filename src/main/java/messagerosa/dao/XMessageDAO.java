@@ -16,10 +16,13 @@ public class XMessageDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false, name = "gupshup_message_id")
     private String gupshupMessageId;
-    @Column(nullable = false, name = "whatsapp_message_id")
+
+    @Column(name = "whatsapp_message_id")
     private String whatsappMessageId;
+
     private String userId;
     private String fromId;
     private String channel;

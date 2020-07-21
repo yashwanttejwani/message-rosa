@@ -9,6 +9,6 @@ import lombok.*;
 @Builder
 public class MessageId {
    private String Id;
-   private String gupshupMessageID;
-   private String whatsappMessageID;
+   private String gupshupMessageId;
+   private String whatsappMessageId;
 }
