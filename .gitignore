@@ -76,3 +76,6 @@ message-rosa.iml
 *.iml
 
 src/main/resources/application-messagerosa.properties
+
+.gradle/
+.idea/
