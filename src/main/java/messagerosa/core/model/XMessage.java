@@ -103,13 +103,17 @@ public class XMessage implements Serializable {
 	}
 
 	public long secondsSinceLastMessage(){
-		long messageTime = this.timestamp;
-		long currentTimestamp = Instant.now().getEpochSecond();
-		return currentTimestamp - messageTime;
+		if(this.timestamp != null){
+			long messageTime = this.timestamp;
+			long currentTimestamp = Instant.now().getEpochSecond();
+			return currentTimestamp - messageTime;
+		}else{
+			return Long.MAX_VALUE;
+		}
 	}
 
 	public void setChannel(String channel){
-		this.channelURI =channel;
+		this.channelURI = channel;
 	}
 
 	public void setProvider(String provider){
@@ -117,17 +121,25 @@ public class XMessage implements Serializable {
 	}
 
 	public void setNextDestination(String destination){
+		System.out.println("SetNextDestination Called");
 		if(destination.equals("Outbound")){
 			this.transformers = new ArrayList<>();
-
 		}else{
-			this.setNextDestination(TransformerRegistry.getName(transformers.get(0).getId()));
+			Transformer transformer = new Transformer();
+			transformer.setId(TransformerRegistry.getID(destination));
+			ArrayList<Transformer> oldTransformers;
+			if(this.getTransformers() == null){
+				oldTransformers = new ArrayList<>();
+			}else{
+				oldTransformers = this.transformers;
+			}
+			oldTransformers.add(transformer);
+			this.setTransformers(oldTransformers);
 		}
 	}
 
 	public String getCampaign(){
-		System.out.println("Called getCampaign");
-		return "ResumeBuilder";
+		return this.getApp();
 	}
 
 	public String getMessageStateString(){

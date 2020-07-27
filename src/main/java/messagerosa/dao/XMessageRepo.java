@@ -7,8 +7,13 @@ import java.util.List;
 
 @Repository
 public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
+
+    List<XMessageDAO> findAllByFromIdOrderByTimestampDesc(String formID);
+
     List<XMessageDAO> findAllByUserId(String userID);
 
-    List<XMessageDAO> findAllByUserIdOrderByTimeStampDsc(String userID);
+    List<XMessageDAO> findAllByUserIdOrderByTimestampDesc(String userID);
+
+    List<XMessageDAO> findAllByUserIdOrderByTimestamp(String userID);
 }
 

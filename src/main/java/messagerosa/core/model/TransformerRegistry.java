@@ -18,4 +18,19 @@ public class TransformerRegistry {
         }
         return null;
     }
+
+    public static String getID(String name) {
+        switch (name){
+            case "Broadcast":
+                return "1";
+            case "Menu":
+                return "3";
+            case "Outbound":
+                return "4";
+            case "PDF":
+                return "5";
+            default:
+                return "2"; //Form
+        }
+    }
 }

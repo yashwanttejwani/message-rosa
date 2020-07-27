@@ -79,3 +79,4 @@ src/main/resources/application-messagerosa.properties
 
 .gradle/
 .idea/
+.DS_Store
