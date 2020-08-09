@@ -17,6 +17,8 @@ public class XMessageDAOUtills {
         xmsgDao.setChannel(xmsg.getChannelURI());
         xmsgDao.setProvider(xmsg.getProviderURI());
 
+        xmsgDao.setXMessage(xmsg.getPayload().getText());
+
         LocalDateTime triggerTime =
                 LocalDateTime.ofInstant(Instant.ofEpochMilli(xmsg.getTimestamp()),
                         TimeZone.getDefault().toZoneId());

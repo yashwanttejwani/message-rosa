@@ -15,5 +15,7 @@ public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
     List<XMessageDAO> findAllByUserIdOrderByTimestampDesc(String userID);
 
     List<XMessageDAO> findAllByUserIdOrderByTimestamp(String userID);
+
+    XMessageDAO findByGupShupMessageId(String gsmsid);
 }
 
