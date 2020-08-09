@@ -7,6 +7,5 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext 
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-
 	<include file="db/migration/001_xmessage.sql" />
 </databaseChangeLog>
