@@ -8,7 +8,8 @@ import java.util.List;
 @Repository
 public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
 
-    List<XMessageDAO> findAllByFromIdOrderByTimestampDesc(String formID);
+    List<XMessageDAO> findAllByFromIdOrderByTimestampDesc(String fromID);
+
 
     List<XMessageDAO> findAllByUserId(String userID);
 
@@ -16,6 +17,11 @@ public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
 
     List<XMessageDAO> findAllByUserIdOrderByTimestamp(String userID);
 
-    XMessageDAO findByGupShupMessageId(String gsmsid);
+    XMessageDAO findByGupshupMessageId(String gsmsid);
+
+    XMessageDAO findByWhatsappMessageId(String gsmsid);
+
+    List<XMessageDAO> findAllByFromIdAndMessageStateOrderByTimestamp(String userID,String messageState);
+
 }
 

@@ -10,14 +10,12 @@ public class XMessageDAOUtills {
 
     public static XMessageDAO convertXMessageToDAO(XMessage xmsg){
         XMessageDAO xmsgDao = new XMessageDAO();
-        xmsgDao.setGupshupMessageId(xmsg.getMessageId().getGupshupMessageId());
-        xmsgDao.setWhatsappMessageId(xmsg.getMessageId().getWhatsappMessageId());
+//        xmsgDao.setGupshupMessageId(xmsg.getMessageId().getChannelMessageId());
+        xmsgDao.setWhatsappMessageId(xmsg.getMessageId().getChannelMessageId());
         xmsgDao.setUserId(xmsg.getTo().getUserID());
         xmsgDao.setFromId(xmsg.getFrom().getUserID());
         xmsgDao.setChannel(xmsg.getChannelURI());
         xmsgDao.setProvider(xmsg.getProviderURI());
-        xmsgDao.setXMessage(xmsg.getPayload().getText());
-
         xmsgDao.setXMessage(xmsg.getPayload().getText());
 
         LocalDateTime triggerTime =
