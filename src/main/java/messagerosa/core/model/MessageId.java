@@ -10,4 +10,5 @@ import lombok.*;
 public class MessageId {
    private String Id;
    private String channelMessageId;
+   private String replyId;
 }

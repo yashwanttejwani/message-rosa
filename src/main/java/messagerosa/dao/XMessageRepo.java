@@ -13,15 +13,18 @@ public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
 
     List<XMessageDAO> findAllByUserId(String userID);
 
+    XMessageDAO findFirstByReplyIdOrderByTimestampDesc(String replyId);
+
+    XMessageDAO findFirstByCauseIdAndMessageStateOrderByTimestampDesc(String causeId, String messageState);
+
     List<XMessageDAO> findAllByUserIdOrderByTimestampDesc(String userID);
 
     List<XMessageDAO> findAllByUserIdOrderByTimestamp(String userID);
 
     XMessageDAO findTopByUserIdAndMessageStateOrderByTimestampDesc(String userId, String messageState);
+    XMessageDAO findTopByFromIdAndMessageStateOrderByTimestampDesc(String fromId, String messageState);
 
-    XMessageDAO findByGupshupMessageId(String gsmsid);
-
-    XMessageDAO findByWhatsappMessageId(String gsmsid);
+    XMessageDAO findTopByUserIdOrderByTimestampDesc(String userId);
 
     List<XMessageDAO> findAllByFromIdAndMessageStateOrderByTimestamp(String userID,String messageState);
 

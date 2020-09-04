@@ -17,12 +17,6 @@ public class XMessageDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = true, name = "gupshup_message_id")
-    private String gupshupMessageId;
-
-    @Column(name = "whatsapp_message_id")
-    private String whatsappMessageId;
-
     private String userId;
     private String fromId;
     private String channel;
@@ -32,4 +26,7 @@ public class XMessageDAO {
     private String xMessage;
     private String app;
     private String auxData;
+    private String messageId;
+    private String replyId;
+    private String causeId;
 }

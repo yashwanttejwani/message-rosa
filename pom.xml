@@ -14,7 +14,7 @@
 	<name>message-rosa</name>
 	<description>message-rosa for messages</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>10</java.version>
 	</properties>
 
 	<dependencies>

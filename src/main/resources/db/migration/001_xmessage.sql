@@ -1,7 +1,8 @@
 create table x_message(
 	id BIGSERIAL PRIMARY KEY NOT NULL,
-	gupshup_message_id VARCHAR(40) NULL,
-	whatsapp_message_id VARCHAR(40) NULL,
+	reply_id VARCHAR(40) NULL,
+	message_id VARCHAR(40) NULL,
+	cause_id VARCHAR(40) NULL,
 	user_id VARCHAR(40) NULL,
 	from_id VARCHAR(40) NULL,
 	channel VARCHAR(20) NULL,
@@ -14,5 +15,6 @@ create table x_message(
 );
 
 CREATE INDEX index_user_id ON x_message(user_id);
-CREATE INDEX index_gupshup_message_id ON x_message(gupshup_message_id);
-CREATE INDEX index_whatsapp_message_id ON x_message(whatsapp_message_id);
+CREATE INDEX index_from_id ON x_message(user_id);
+CREATE INDEX index_message_id ON x_message(message_id);
+CREATE INDEX index_reply_id ON x_message(reply_id);
