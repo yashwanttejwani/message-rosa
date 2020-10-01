@@ -39,8 +39,15 @@ public class XMessage implements Serializable {
 		OPTED_OUT
 	}
 
+	public enum MessageType {
+		HSM,
+		TEXT
+	}
+
 	//Persist
 	private String app;
+
+	private MessageType messageType;
 
 	//Persist
 	private MessageId messageId;

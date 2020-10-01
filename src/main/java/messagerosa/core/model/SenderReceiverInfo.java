@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Getter
 @Setter
 @Builder
@@ -20,4 +23,5 @@ public class SenderReceiverInfo {
 	private String formID;
 	private boolean bot;
 	private boolean broadcast;
+	private Map<String, String> meta;
 }
