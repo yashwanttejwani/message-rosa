@@ -10,6 +10,8 @@ public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
 
     List<XMessageDAO> findAllByFromIdOrderByTimestampDesc(String fromID);
 
+    XMessageDAO findFirstByFromIdOrderByTimestampDesc(String fromID);
+
 
     XMessageDAO findFirstByAppOrderByTimestampDesc(String appName);
 
@@ -27,6 +29,8 @@ public interface XMessageRepo  extends JpaRepository<XMessageDAO, Long> {
 
     XMessageDAO findTopByUserIdAndMessageStateOrderByTimestampDesc(String userId, String messageState);
     XMessageDAO findTopByFromIdAndMessageStateOrderByTimestampDesc(String fromId, String messageState);
+
+    XMessageDAO findFirstByUserIdAndCauseIdAndMessageStateOrderByTimestampDesc(String userId, String causeId, String messageState);
 
     XMessageDAO findTopByUserIdOrderByTimestampDesc(String userId);
 

@@ -1,0 +1,1 @@
+ALTER TABLE x_message ALTER COLUMN message_id TYPE text;

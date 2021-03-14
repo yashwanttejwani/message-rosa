@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,8 @@ public class SenderReceiverInfo {
 
 	// persist
 	private String userID;
+
+	private ArrayList<String> groups;
 
 	private String campaignID;
 	private String formID;

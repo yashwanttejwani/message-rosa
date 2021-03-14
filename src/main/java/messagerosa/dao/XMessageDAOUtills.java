@@ -10,17 +10,29 @@ public class XMessageDAOUtills {
 
     public static XMessageDAO convertXMessageToDAO(XMessage xmsg) {
         XMessageDAO xmsgDao = new XMessageDAO();
-        if (xmsg.getMessageId() != null && xmsg.getMessageId().getChannelMessageId() != null) {
-            try{
-                xmsgDao.setMessageId(xmsg.getMessageId().getChannelMessageId().split("-")[1]);
-                xmsgDao.setCauseId(xmsg.getMessageId().getChannelMessageId().split("-")[0]);
-            }catch (Exception e){
-                xmsgDao.setMessageId(xmsg.getMessageId().getChannelMessageId());
-            }
-        }
-        xmsgDao.setReplyId(xmsg.getMessageId().getReplyId());
 
-        xmsgDao.setUserId(xmsg.getTo().getUserID());
+
+        try {
+            xmsgDao.setUserId(xmsg.getTo().getUserID());
+            if (xmsg.getTo().getUserID().equals("Bulk")) {
+                xmsgDao.setReplyId("");
+                xmsgDao.setMessageId(xmsg.getMessageId().getChannelMessageId());
+            } else {
+                xmsgDao.setReplyId(xmsg.getMessageId().getReplyId());
+                if (xmsg.getMessageId() != null && xmsg.getMessageId().getChannelMessageId() != null) {
+                    try {
+                        xmsgDao.setMessageId(xmsg.getMessageId().getChannelMessageId().split("-")[1]);
+                        xmsgDao.setCauseId(xmsg.getMessageId().getChannelMessageId().split("-")[0]);
+                    } catch (Exception e) {
+                        xmsgDao.setMessageId(xmsg.getMessageId().getChannelMessageId());
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // Bulk SMS so no replyID
+        }
+
+
         xmsgDao.setFromId(xmsg.getFrom().getUserID());
 
         xmsgDao.setChannel(xmsg.getChannelURI());
