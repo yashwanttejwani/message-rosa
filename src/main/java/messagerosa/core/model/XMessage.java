@@ -50,6 +50,8 @@ public class XMessage implements Serializable {
 
 	private MessageType messageType;
 
+	private String adapterId;
+
 	//Persist
 	private MessageId messageId;
 
