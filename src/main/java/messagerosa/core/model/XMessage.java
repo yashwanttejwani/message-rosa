@@ -42,7 +42,8 @@ public class XMessage implements Serializable {
 	public enum MessageType {
 		HSM,
 		TEXT,
-		HSM_WITH_BUTTON
+		HSM_WITH_BUTTON,
+		BROADCAST_TEXT
 	}
 
 	//Persist
