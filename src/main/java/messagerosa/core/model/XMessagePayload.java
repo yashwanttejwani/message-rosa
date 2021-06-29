@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
 @Builder
@@ -16,5 +18,5 @@ public class XMessagePayload {
 	private MessageMedia media;
 	private LocationParams location;
 	private ContactCard contactCard;
-
+	private ArrayList<ButtonChoice> buttonChoices;
 }

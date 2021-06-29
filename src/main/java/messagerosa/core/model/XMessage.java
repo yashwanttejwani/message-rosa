@@ -88,10 +88,6 @@ public class XMessage implements Serializable {
 	private XMessageThread thread;
 	private XMessagePayload payload;
 
-	public String style(String provider, String channel) {
-		return this.payload.getText();
-	}
-
 	public String toXML() throws JAXBException {
 		JAXBContext context = JAXBContext.newInstance(XMessage.class);
 		Marshaller marshaller = context.createMarshaller();
