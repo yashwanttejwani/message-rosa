@@ -5,7 +5,6 @@ import java.io.StringWriter;
 import java.time.Instant;
 import java.util.ArrayList;
 
-import javax.persistence.MappedSuperclass;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -25,7 +24,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement
-@MappedSuperclass
 public class XMessage implements Serializable {
 	public enum MessageState {
 		NOT_SENT,
