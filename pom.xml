@@ -14,14 +14,14 @@
 	<name>message-rosa</name>
 	<description>message-rosa for messages</description>
 	<properties>
-		<java.version>10</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.2</version>
+			<version>1.18.12</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -54,12 +54,6 @@
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.6.2</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.2</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
