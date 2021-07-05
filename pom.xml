@@ -8,21 +8,20 @@
 		<version>2.3.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.samagra</groupId>
+	<groupId>com.uci</groupId>
 	<artifactId>message-rosa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>message-rosa</name>
 	<description>message-rosa for messages</description>
 	<properties>
-		<java.version>10</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.2</version>
-			<scope>provided</scope>
+			<version>1.18.12</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
@@ -54,12 +53,6 @@
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.6.2</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.2</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
