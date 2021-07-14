@@ -86,13 +86,24 @@ public class XMessage implements Serializable {
 	private XMessageThread thread;
 	private XMessagePayload payload;
 
+	private static JAXBContext context;
+	private static Marshaller marshaller;
+
+	static {
+		try {
+			context = JAXBContext.newInstance(XMessage.class);
+			marshaller = context.createMarshaller();
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+
+
 	public String toXML() throws JAXBException {
-		JAXBContext context = JAXBContext.newInstance(XMessage.class);
-		Marshaller marshaller = context.createMarshaller();
-		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		StringWriter sw = new StringWriter();
-		marshaller.marshal(this, sw);
-		return sw.toString();
+		StringWriter stringWriter = new StringWriter();
+		marshaller.marshal(this, stringWriter);
+		return stringWriter.toString();
 	}
 
 	public void completeTransform() {
