@@ -19,12 +19,12 @@ public class SenderReceiverInfo {
 
 	// persist
 	private String userID;
-
 	private ArrayList<String> groups;
-
 	private String campaignID;
 	private String formID;
 	private boolean bot;
 	private boolean broadcast;
 	private Map<String, String> meta;
+	private DeviceType deviceType;
+	private String deviceID;
 }
