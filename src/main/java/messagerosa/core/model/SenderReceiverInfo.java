@@ -18,7 +18,7 @@ import java.util.Map;
 public class SenderReceiverInfo {
 
 	// persist
-	private String userID;
+	private String userID; //PhoneNo
 	private ArrayList<String> groups;
 	private String campaignID;
 	private String formID;
@@ -26,5 +26,5 @@ public class SenderReceiverInfo {
 	private boolean broadcast;
 	private Map<String, String> meta;
 	private DeviceType deviceType;
-	private String deviceID;
+	private String deviceID; //EncryptedDeviceID
 }
