@@ -80,6 +80,8 @@ public class XMessage implements Serializable {
 
 	private ConversationStage conversationStage;
 	
+	private String levelOfConversation;
+	
 	@NotNull
 	private ArrayList<Transformer> transformers; // -1 no transfer like ms3 transforms msg to next msg
 
