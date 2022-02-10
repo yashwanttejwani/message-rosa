@@ -20,4 +20,6 @@ public class XMessagePayload {
 	private ContactCard contactCard;
 	private ArrayList<ButtonChoice> buttonChoices;
 	private String stylingTag;
+	private String flow;
+	private Integer questionIndex;
 }
