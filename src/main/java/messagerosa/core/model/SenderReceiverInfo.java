@@ -26,5 +26,6 @@ public class SenderReceiverInfo {
 	private boolean broadcast;
 	private Map<String, String> meta;
 	private DeviceType deviceType;
-	private String deviceID; //EncryptedDeviceID
+	private String deviceID; //UUID
+	private String encryptedDeviceID; //Encrypted Device String
 }
