@@ -21,6 +21,6 @@ public class XMessagePayload {
 	private ArrayList<ButtonChoice> buttonChoices;
 	private StylingTag stylingTag;
 	private String flow;
-	private Integer index;
+	private Integer questionIndex;
 	private String mediaCaption;
 }
