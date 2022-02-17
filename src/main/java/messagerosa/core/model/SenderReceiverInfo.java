@@ -27,4 +27,5 @@ public class SenderReceiverInfo {
 	private Map<String, String> meta;
 	private DeviceType deviceType;
 	private String deviceID; //UUID
+	private String encryptedDeviceID; //Encrypted Device String
 }
