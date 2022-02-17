@@ -19,7 +19,8 @@ public class XMessagePayload {
 	private LocationParams location;
 	private ContactCard contactCard;
 	private ArrayList<ButtonChoice> buttonChoices;
-	private String stylingTag;
+	private StylingTag stylingTag;
 	private String flow;
 	private Integer questionIndex;
+	private String mediaCaption;
 }
