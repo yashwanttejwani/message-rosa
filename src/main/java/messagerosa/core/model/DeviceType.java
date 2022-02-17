@@ -1,8 +1,7 @@
 package messagerosa.core.model;
 
 public enum DeviceType {
-    PHONE("phone"),
-	PHONE_PWA("ucipwa");
+    PHONE("phone");
 
     private String name;
 
