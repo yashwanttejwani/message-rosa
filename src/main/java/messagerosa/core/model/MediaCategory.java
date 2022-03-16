@@ -5,7 +5,7 @@ public enum MediaCategory {
 	AUDIO("audio"),
 	VIDEO("video"),
 	VOICE("voice"),
-	DOCUMENT("document");
+	FILE("file");
 
     private String name;
 
