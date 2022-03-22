@@ -5,7 +5,8 @@ public enum StylingTag {
 	QUICKREPLYBTN("buttonsForListItems"),
 	IMAGE("image"),
 	AUDIO("audio"),
-	VIDEO("video");
+	VIDEO("video"),
+	DOCUMENT("document");
 
 	private String name;
 
