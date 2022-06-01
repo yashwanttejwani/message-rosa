@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.io.StringWriter;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -80,8 +79,6 @@ public class XMessage implements Serializable {
 	private String lastMessageID;
 
 	private ConversationStage conversationStage;
-	
-	private ArrayList<Integer> conversationLevel;
 	
 	@NotNull
 	private ArrayList<Transformer> transformers; // -1 no transfer like ms3 transforms msg to next msg

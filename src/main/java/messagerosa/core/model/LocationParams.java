@@ -12,7 +12,4 @@ import lombok.Setter;
 public class LocationParams {
     private double longitude;
     private double latitude;
-    private String address;
-    private String url;
-    private String name;
 }

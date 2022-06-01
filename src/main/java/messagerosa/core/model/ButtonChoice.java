@@ -10,5 +10,4 @@ import lombok.*;
 public class ButtonChoice {
     private String key;
     private String text;
-    private Boolean backmenu;
 }

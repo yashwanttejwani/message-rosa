@@ -10,9 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MessageMedia {
-    private MediaCategory category; //category list {image, audio, document, video}
+    private String category; //category list {image, audio, document, video}
     private String text; //caption, if applicable
     private String url;
-    private MessageMediaError messageMediaError;
-    private Double size;
 }
